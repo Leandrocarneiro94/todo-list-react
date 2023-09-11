@@ -1,0 +1,17 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "text": "categoria 1",
+      "active": true
+    }
+  ],
+  "items": [
+    {
+        "id": 1,
+        "text": "item 1 categoria 1",
+        "checked": false,
+        "categoryId": 1
+    }
+  ]
+}
