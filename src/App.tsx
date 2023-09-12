@@ -4,22 +4,22 @@ import GlobalStyle from './config/GlobalStyle'
 import Navbar from './components/NavBar'
 import type { Category } from './types/types'
 import { Container, ItemContainer, ItemWrapper, TitleWrapper } from './App.styled'
-
+import { getCategories, postCategory } from './api/categories'
 
 function App() {
   // hooks
   const [categories, setCategories] = React.useState<Category[]>([])
 
   React.useEffect(() => {
-    const url = 'http://localhost:3000/'    
     // fetch(`${url}categories/`)
     //  .then((resposta) => resposta.json())
     //  .then((dados) => console.log(dados))
     //  .catch((error) => console.log(error))
     const loadCategories = async () => {
       try {
-        const resposta = await fetch(`${url}categories/`)
-        const dados = await resposta.json()
+        const dados = await getCategories()
+        console.log(dados)
+        setCategories(dados)
       } catch(error){
         console.log(error)
       }
@@ -29,12 +29,17 @@ function App() {
   }, [])
 
   const onCreateCategory = (category: Category) => {
-    const newCategories = categories.map((mapCategory) => ({ 
-      ...mapCategory,
-      active: false,
-    }))
-    newCategories.push(category)
-    setCategories(newCategories)
+    try {
+      postCategory(category)
+      const newCategories = categories.map((mapCategory) => ({ 
+        ...mapCategory,
+        active: false,
+      }))
+      newCategories.push(category)
+      setCategories(newCategories)
+    } catch(error){
+      console.log(error)
+    }
   }
 
   const onUpdateCategoryValue = (categoryIndex: number,  value: string) => {
