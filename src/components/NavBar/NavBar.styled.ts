@@ -1,9 +1,4 @@
-import styled from "styled-components";
-// import { ReactComponent as AddButtonW } from '../../assets/addButtonW.svg';
-
-// export const AddButton = styled(Icon)`
-//   background-color: ${({ theme }) => theme.colors.primary};
-// `;
+import styled from 'styled-components'
 
 const Nav = styled.nav`
     align-items: flex-end;
@@ -17,18 +12,22 @@ const Nav = styled.nav`
 
 const TitleWrapper = styled.div`
     display: flex;
-      gap: 1.5rem;
-      justify-content: center;  
-      padding: 2.6875rem 2.75rem 3.8125rem 4.1875rem;
+    gap: 1.5rem;
+    justify-content: center;  
+    padding: 2.6875rem 2.75rem 3.8125rem 4.1875rem;
 `
 
 const Title = styled.h2`
     color: var(--white);
     font-size: 2.25rem;
 `
+const AddCategoryButton = styled.button`
+    background-color: transparent;
+`;
 
 export default { 
     Nav,
     TitleWrapper,
     Title,
+    AddCategoryButton
 }

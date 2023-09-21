@@ -1,63 +1,190 @@
 {
   "categories": [
     {
-      "id": 1,
-      "text": "categoria 1",
-      "active": true
+      "text": "b",
+      "active": true,
+      "id": 2,
+      "items": [
+        {
+          "text": "cat 1",
+          "checked": false,
+          "categoryId": 2,
+          "id": 24
+        },
+        {
+          "text": "cat 2 riscada",
+          "checked": true,
+          "categoryId": 2,
+          "id": 25
+        },
+        {
+          "text": "",
+          "checked": false,
+          "categoryId": 2,
+          "id": 33
+        },
+        {
+          "text": "",
+          "checked": false,
+          "categoryId": 2,
+          "id": 34
+        },
+        {
+          "text": "",
+          "checked": false,
+          "categoryId": 2,
+          "id": 35
+        }
+      ]
     },
     {
-      "text": "categoria 1",
+      "text": "Wjv!Hq6Aie33zdT",
       "active": true,
-      "id": 2
+      "id": 3,
+      "items": [
+        {
+          "text": "RISCADA",
+          "checked": true,
+          "categoryId": 3,
+          "id": 26
+        },
+        {
+          "text": "",
+          "checked": false,
+          "categoryId": 3,
+          "id": 31
+        },
+        {
+          "text": "aqui ",
+          "checked": false,
+          "categoryId": 3,
+          "id": 32
+        }
+      ]
     },
     {
-      "text": "",
+      "text": "salvando texto",
       "active": true,
-      "id": 3
+      "id": 4,
+      "items": [
+        {
+          "text": "",
+          "checked": false,
+          "categoryId": 4,
+          "id": 28
+        },
+        {
+          "text": "",
+          "checked": false,
+          "categoryId": 4,
+          "id": 29
+        },
+        {
+          "text": "",
+          "checked": false,
+          "categoryId": 4,
+          "id": 30
+        }
+      ]
     },
     {
-      "text": "",
+      "text": "aqui ta salve",
       "active": true,
-      "id": 4
+      "id": 5,
+      "items": []
     },
     {
-      "text": "",
+      "text": "Wjv!Hq6Aie33zdT",
       "active": true,
-      "id": 5
-    },
-    {
-      "text": "",
-      "active": true,
-      "id": 6
-    },
-    {
-      "text": "",
-      "active": true,
-      "id": 7
-    },
-    {
-      "text": "",
-      "active": true,
-      "id": 8
+      "id": 6,
+      "items": [
+        {
+          "text": "",
+          "checked": false,
+          "categoryId": 6,
+          "id": 23
+        }
+      ]
     }
   ],
   "items": [
     {
-      "id": 1,
-      "text": "item 1 categoria 1",
+      "text": "",
       "checked": false,
-      "categoryId": 1
+      "categoryId": 6,
+      "id": 23
     },
     {
-      "id": 2
+      "text": "cat 1",
+      "checked": false,
+      "categoryId": 2,
+      "id": 24
     },
     {
-      "id": 3
+      "text": "cat 2 riscada",
+      "checked": true,
+      "categoryId": 2,
+      "id": 25
     },
     {
-      "text": "categoria 1",
-      "active": true,
-      "id": 4
+      "text": "RISCADA",
+      "checked": true,
+      "categoryId": 3,
+      "id": 26
+    },
+    {
+      "text": "",
+      "checked": false,
+      "categoryId": 5,
+      "id": 27
+    },
+    {
+      "text": "",
+      "checked": false,
+      "categoryId": 4,
+      "id": 28
+    },
+    {
+      "text": "",
+      "checked": false,
+      "categoryId": 4,
+      "id": 29
+    },
+    {
+      "text": "",
+      "checked": false,
+      "categoryId": 4,
+      "id": 30
+    },
+    {
+      "text": "",
+      "checked": false,
+      "categoryId": 3,
+      "id": 31
+    },
+    {
+      "text": "aqui ",
+      "checked": false,
+      "categoryId": 3,
+      "id": 32
+    },
+    {
+      "text": "",
+      "checked": false,
+      "categoryId": 2,
+      "id": 33
+    },
+    {
+      "text": "",
+      "checked": false,
+      "categoryId": 2,
+      "id": 34
+    },
+    {
+      "text": "",
+      "checked": false,
+      "categoryId": 2,
+      "id": 35
     }
   ]
 }

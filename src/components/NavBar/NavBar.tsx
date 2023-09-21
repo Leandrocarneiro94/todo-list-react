@@ -1,32 +1,35 @@
 import CategoryComponent from "../Category"
 import Navbar from './NavBar.styled'
 import type { Category } from '../../types/types'
+import addButtonW from '../../assets/addButtonW.svg'
 
 type NavbarComponentProps = {
   categories: Category[],
   onCreateCategory: (category: Category) => void,
   onUpdateCategoryValue: (categoryIndex: number,  value: string) => void,
   handleActiveCategory: (id: string) => void
+  onSaveCategoryChange: (value: string) => void
 }
+
 
 const NavbarComponent = (props: NavbarComponentProps) => (
   <Navbar.Nav>
     <Navbar.TitleWrapper>
       <Navbar.Title>Categorias</Navbar.Title>
 
-      <button
+      <Navbar.AddCategoryButton
         type="button"
         onClick={
-          () => props.onCreateCategory({
-            id: `category-${props.categories.length + 1}`,
+          () => props.onCreateCategory({            
+            id:'',
             text: '',
             active: true,
             items: []
           })
         }
       >
-        New category
-      </button>
+        <img src={addButtonW} />
+      </Navbar.AddCategoryButton>
     </Navbar.TitleWrapper>
 
     <ul>
@@ -40,6 +43,7 @@ const NavbarComponent = (props: NavbarComponentProps) => (
             onUpdateCategoryValue={props.onUpdateCategoryValue}
             index={index}
             handleActiveCategory={() => props.handleActiveCategory(category.id)}
+            onSaveCategoryChange={props.onSaveCategoryChange}
           />
         ))
       }
