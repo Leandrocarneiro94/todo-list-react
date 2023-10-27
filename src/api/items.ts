@@ -1,7 +1,7 @@
 import request from "./index";
 import { Item } from "../types/types";
 
-const url = 'http://localhost:3000/items/' 
+const url = 'https://todo-list-api-mj3o.onrender.com/items/' 
 
 const postItem = async (item: Partial<Item>) => request(url, {
   method: 'POST',

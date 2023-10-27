@@ -12,7 +12,7 @@ const Item = styled.li<{ isActive: boolean }>`
   gap: 0.625rem;
   height: 3.3125rem;
   justify-content: flex-start;
-  padding-left: 25px;
+  padding-left: 2.75rem;
   padding-right: 0.5rem;
   position: relative;
   width: 18.75rem;
@@ -40,7 +40,6 @@ const Item = styled.li<{ isActive: boolean }>`
   `}
 `
 
-
 const Input = styled.input`
   background-color: transparent;
   outline: none;
@@ -67,6 +66,7 @@ const Image = styled.img`
 const CloseButton = styled.button`
   background-color: transparent;
   height: 20px;
+  cursor: pointer;
 `
 
 export default {
@@ -76,4 +76,3 @@ export default {
   Image,
   CloseButton,
 }
-

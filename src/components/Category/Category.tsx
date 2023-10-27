@@ -10,14 +10,14 @@ type CategoryComponentProps = {
   index: number,
   handleActiveCategory: () => void,
   onSaveCategoryChange: (text: string) => void,
+  onDeleteCategory: () => void,
 }
 
 const CategoryComponent = (props: CategoryComponentProps) => (
   <Category.Item isActive={props.active} onClick={props.handleActiveCategory}>
-    <Category.CloseButton>
+    <Category.CloseButton onClick={props.onDeleteCategory}>
       <Category.Image src={deleteButton}/>
     </Category.CloseButton>
-    
     <Category.Input
       value={props.text}
       autoFocus

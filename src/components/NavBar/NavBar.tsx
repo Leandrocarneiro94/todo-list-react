@@ -9,6 +9,7 @@ type NavbarComponentProps = {
   onUpdateCategoryValue: (categoryIndex: number,  value: string) => void,
   handleActiveCategory: (id: string) => void
   onSaveCategoryChange: (value: string) => void
+  onDeleteCategory: (id: string) => void
 }
 
 
@@ -20,8 +21,8 @@ const NavbarComponent = (props: NavbarComponentProps) => (
       <Navbar.AddCategoryButton
         type="button"
         onClick={
-          () => props.onCreateCategory({            
-            id:'',
+          () => props.onCreateCategory({
+            id: `category-${props.categories.length + 1}`,
             text: '',
             active: true,
             items: []
@@ -44,6 +45,7 @@ const NavbarComponent = (props: NavbarComponentProps) => (
             index={index}
             handleActiveCategory={() => props.handleActiveCategory(category.id)}
             onSaveCategoryChange={props.onSaveCategoryChange}
+            onDeleteCategory={() => props.onDeleteCategory(category.id)}
           />
         ))
       }

@@ -5,7 +5,7 @@ import Navbar from './components/NavBar'
 import type { Category } from './types/types'
 import { Container, ItemContainer, ItemWrapper, TitleWrapper, AddItemButton } from './App.styled'
 import addButtonP from './assets/addButtonP.svg'
-import { getCategories, postCategory, editCategory } from './api/categories'
+import { getCategories, postCategory, editCategory, deleteCategory } from './api/categories'
 import { postItem, deleteItem, editItem } from './api/items'
 
 function App() {
@@ -20,6 +20,7 @@ function App() {
     const loadCategories = async () => {
       try {
         const dados = await getCategories()
+        console.log(dados)
         setCategories(dados)
       } catch(error){
         console.log(error)
@@ -32,7 +33,6 @@ function App() {
   const onCreateCategory = async (category: Category) => {
     try {
       const createdCategory = await postCategory(category)
-      console.log({createdCategory})
       const newCategories = categories.map((mapCategory) => ({ 
         ...mapCategory,
         active: false,
@@ -86,6 +86,19 @@ function App() {
     }
   };
 
+  const onDeleteCategory = async (id: string) => {
+    try {
+      await deleteCategory(id);
+      const newCategories = (categories.filter((categoryItem) => id !== categoryItem.id))
+      setCategories(newCategories)
+      // fazer o filter do category e o setCategories
+            
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
   const activeCategory = categories.find((category) => category.active)
 
   const onSaveCategoryChange = async ( value: string) => {
@@ -94,7 +107,6 @@ function App() {
         ...activeCategory,
         text: value,
       }
-      console.log({updatedCategory})
 
       await editCategory(updatedCategory)
 
@@ -139,6 +151,7 @@ function App() {
     }
     try {
       const createdItem = await postItem(newItem)
+      console.log(createdItem)
       const newCategories = categories.map((category) => ({
         ...category,
         items: category.active ? [
@@ -164,20 +177,21 @@ function App() {
         onUpdateCategoryValue={onUpdateCategoryValue}
         handleActiveCategory={handleActiveCategory}
         onSaveCategoryChange={onSaveCategoryChange}
+        onDeleteCategory={onDeleteCategory}
       />
 
       <ItemContainer>
         <TitleWrapper>
           {
             activeCategory ? (
-              <>
-                <h2>{activeCategory?.text}</h2>
-                <AddItemButton 
-                  type="button"
-                  onClick={onCreateItem}>
-                  <img src={addButtonP} />
-                </AddItemButton>
-              </>
+            <>
+              <h2>{activeCategory?.text}</h2>
+              <AddItemButton 
+              type="button"
+              onClick={onCreateItem}>
+                <img src={addButtonP} />
+              </AddItemButton>
+            </>
             )
             : (
               <p>Cadastre uma categoria para cadastrar itens</p>
